@@ -33,6 +33,16 @@ export default {
     }
   },
 
+  find: async (req, res) => {
+    try {
+      const data = await Vendor.find(req.body)
+
+      ResponseHandler.success(res, data)
+    } catch (error) {
+      ResponseHandler.success(res, error)
+    }
+  },
+
   delete: async (req, res) => {
     try {
       const { id } = req.params

@@ -7,5 +7,6 @@ router.get('/all', Controller.getAll)
 router.post('/', Controller.create)
 router.put('/:id', Controller.update)
 router.delete('/:id', Controller.delete)
+router.post('/find', Controller.find)
 
 export default router
