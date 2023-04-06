@@ -22,7 +22,6 @@ const find = async (where) => {
 
 const update = async (id, data) => {
   const _update = await Model.update(data, { where: { id } })
-  //comment
 
   return _update
 }
