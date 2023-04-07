@@ -1,4 +1,3 @@
-import { where } from 'sequelize'
 import Repository from '../repositories/vendor.js'
 
 export const Vendor = {

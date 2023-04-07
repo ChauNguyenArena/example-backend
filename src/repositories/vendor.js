@@ -13,22 +13,21 @@ const findId = async (id) => {
 }
 
 const find = async (where) => {
-  const _where = where 
+  console.log(_where)
   const data = Model.findAll({
-    where: { _where },
+    where: _where,
   })
   return data
 }
 
 const update = async (id, data) => {
-  const _update = await Model.update(data, { where: { id } })
+  const _update = await Model.update({ data }, { where: { id } })
 
   return _update
 }
 
 const create = async (data) => {
   const created = await Model.create(data)
-  await created.save()
 
   return created
 }

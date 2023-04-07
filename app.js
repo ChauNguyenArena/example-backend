@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import vendorRouter from './src/routes/vendor.js'
+import productRouter from './src/routes/product.js'
 
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
@@ -45,6 +46,7 @@ app.use(['/adm*n', '/manager'], admin) // mount the sub
 app.use('/admin', admin)
 
 app.use('/api/vendor', vendorRouter)
+app.use('/api/product', productRouter)
 
 app.listen(PORT, () => console.log(`🚀 App listening on port ${PORT}`))
 
