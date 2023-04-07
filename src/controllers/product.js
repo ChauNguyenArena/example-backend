@@ -21,4 +21,26 @@ export default {
       ResponseHandler.error(res, error)
     }
   },
+
+  find: async (req, res) => {
+    try {
+      const data = await Product.find(req.body)
+
+      return ResponseHandler.success(res, data)
+    } catch (error) {
+      ResponseHandler.error(res, error)
+    }
+  },
+
+  delete: async (req, res) => {
+    try {
+      const { id } = req.params
+
+      await Product.delete(id)
+
+      return ResponseHandler.success(res)
+    } catch (error) {
+      return ResponseHandler.error(res, error)
+    }
+  },
 }
