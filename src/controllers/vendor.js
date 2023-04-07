@@ -25,6 +25,7 @@ export default {
   update: async (req, res) => {
     try {
       const { id } = req.params
+      console.log(req.body)
       const data = await Vendor.update(id, req.body)
 
       return ResponseHandler.success(res, data)
